@@ -30,7 +30,6 @@ public class TcpThread extends Thread implements Runnable{
     private void connect() {
         try {
             socket = new Socket(IpAddr, port);
-            Log.v("Noor","Inside TCP");
             dataInputStream = new DataInputStream(socket.getInputStream());
             dataOutputStream = new DataOutputStream(socket.getOutputStream());
 
