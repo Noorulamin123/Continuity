@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ChangeIpActivity"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:id="@+id/changeIP"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/_127_0_0_1"
+        android:layout_marginTop="80dp"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText android:id="@+id/changePort"
+        android:hint="@string/_1000"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button android:id="@+id/saveIP"
+        android:text="@string/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="80dp"
+        android:background="@color/colorAccent"/>
+
+</LinearLayout>

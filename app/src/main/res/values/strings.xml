@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Continuity</string>
+    <string name="start_service">Start Service</string>
+    <string name="stop_service">Stop Service</string>
+    <string name="change_ip">Change IP Address</string>
+    <string name="save">Save</string>
+    <string name="_1000">0000</string>
+    <string name="_127_0_0_1">127.0.0.1</string>
+</resources>
