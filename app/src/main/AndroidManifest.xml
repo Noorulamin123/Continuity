@@ -24,7 +24,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ImageSendActivity"></activity>
         <activity android:name=".ImageCaptureActivity" />
-        <activity android:name=".CameraCaptureActivity" />
         <activity android:name=".ChangeIpActivity" />
 
         <service

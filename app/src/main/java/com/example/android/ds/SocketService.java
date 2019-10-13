@@ -16,23 +16,18 @@ import static com.example.android.ds.TcpThread.RESULT;
 public class SocketService extends Service {
     private TcpThread tcpThread;
 
-//    public SocketService() {
-//        tcpThread = new TcpThread();
-//    }
 
     @Override
     public IBinder onBind(Intent intent) {
         return null;
     }
-    CameraBroadcastReceiver cameraBroadcastReceiver = new CameraBroadcastReceiver();
 
     @Override
     public void onCreate() {
         super.onCreate();
         tcpThread = new TcpThread();
         Toast.makeText(this, "Service Created", Toast.LENGTH_SHORT).show();
-        IntentFilter filter = new IntentFilter(ACTION_NEW_PICTURE);
-        registerReceiver(cameraBroadcastReceiver,filter);
+
     }
 
     @Override
@@ -49,27 +44,11 @@ public class SocketService extends Service {
             captureImage();
         }
 
-        IntentFilter filter = new IntentFilter(ACTION_NEW_PICTURE);
-        registerReceiver(cameraBroadcastReceiver,filter);
 
         return START_STICKY;
     }
 
     private void captureImage() {
-//        Intent captureImage = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//        captureImage.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);             for simple image capture intent
-//        startActivity(captureImage);
-
-
-//        Intent captureImage = new Intent(ACTION_NEW_PICTURE);
-//        captureImage.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        startActivity(captureImage);
-
-
-//        Intent captureImage = new Intent(SocketService.this,CameraCaptureActivity.class);
-//        captureImage.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        startActivity(captureImage);
-
 
         Intent captureImage = new Intent(SocketService.this,ImageCaptureActivity.class);
         captureImage.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ChangeIpActivity extends AppCompatActivity {
 
     public static String IpAddr = "192.168.43.154";
-    public static final int port = 3333;
+    public static final int port = 3330;
     public static final int port2 = 3334;
     public static EditText changePort;
     public static EditText changeIP;

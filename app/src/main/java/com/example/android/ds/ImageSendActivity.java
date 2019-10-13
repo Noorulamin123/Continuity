@@ -1,7 +1,10 @@
 package com.example.android.ds;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,11 +17,14 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.net.Socket;
 
 import static com.example.android.ds.ChangeIpActivity.IpAddr;
@@ -48,42 +54,30 @@ public class ImageSendActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.sendImage:
-//                sendImage();
+                sendImage();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
-//
-//    private void sendImage() {
-//        SendTask sendTask = new SendTask();
-//        sendTask.execute();
-//    }
-//
-//    static class SendTask extends AsyncTask<Void,Void,Void> {
-//        private Socket socket;
-//        @Override
-//        protected Void doInBackground(Void... voids) {
-//
-//            try {
-//                socket = new Socket(IpAddr,port2);
-//                ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
-//                File imageFile = new File(imagePath);
-//                FileInputStream fileInputStream = new FileInputStream(imageFile);
-//                objectOutputStream.writeUTF();
-//                objectOutputStream.flush();
-//                objectOutputStream.close();
-//                socket.close();
-//            }
-//            catch (IOException e) {
-//                e.getStackTrace();
-//            }
-//            return null;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(Void aVoid) {
-//            super.onPostExecute(aVoid);
-//        }
-//    }
+
+    private void sendImage() {
+        SendingThread sendingThread = new SendingThread();
+        sendingThread.start();
+        try {
+            sendingThread.join();
+            Toast.makeText(ImageSendActivity.this, "File Sent", Toast.LENGTH_SHORT).show();
+            finish();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    public static byte[] getBytesFromBitmap(Bitmap bitmap) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 70, stream);
+        return stream.toByteArray();
+    }
 }

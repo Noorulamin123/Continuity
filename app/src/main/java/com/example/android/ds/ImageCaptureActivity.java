@@ -96,6 +96,7 @@ public class ImageCaptureActivity extends AppCompatActivity {
                         Toast.makeText(getBaseContext(), msg,Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(ImageCaptureActivity.this,ImageSendActivity.class);
                         startActivity(intent);
+                        finish();
                     }
 
 
