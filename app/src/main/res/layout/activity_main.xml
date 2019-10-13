@@ -12,13 +12,15 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="160dp"
-        android:text="@string/start_service"/>
+        android:text="@string/start_service"
+        android:backgroundTint="@color/colorAccent"/>
     <Button
         android:id="@+id/stop"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="160dp"
-        android:text="@string/stop_service"/>
+        android:text="@string/stop_service"
+        android:backgroundTint="@color/colorAccent"/>
 
 </LinearLayout>

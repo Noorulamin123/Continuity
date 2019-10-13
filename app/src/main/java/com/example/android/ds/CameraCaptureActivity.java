@@ -99,8 +99,8 @@ public class CameraCaptureActivity extends AppCompatActivity {
                         outputStream.close();
                         filePath = savedPhoto.getAbsolutePath();
                         Log.v("Noor","File: "+filePath);
-                        Intent loadImage = new Intent(CameraCaptureActivity.this,ImageSendActivity.class);
-                        startActivity(loadImage);
+//                        Intent loadImage = new Intent(CameraCaptureActivity.this,ImageSendActivity.class);
+//                        startActivity(loadImage);
                     } catch (java.io.IOException e) {
                         e.printStackTrace();
                     }

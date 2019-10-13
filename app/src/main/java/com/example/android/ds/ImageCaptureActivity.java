@@ -88,14 +88,14 @@ public class ImageCaptureActivity extends AppCompatActivity {
 
 
 
-                    
+
                     @Override
                     public void onImageSaved(@NonNull File file) {
                         String msg = "Pic captured at " + file.getAbsolutePath();
                         imagePath = file.getAbsolutePath();
                         Toast.makeText(getBaseContext(), msg,Toast.LENGTH_LONG).show();
-//                        Intent intent = new Intent(ImageCaptureActivity.this,ImageSendActivity.class);
-//                        startActivity(intent);
+                        Intent intent = new Intent(ImageCaptureActivity.this,ImageSendActivity.class);
+                        startActivity(intent);
                     }
 
 

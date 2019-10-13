@@ -7,4 +7,5 @@
     <string name="_1000">0000</string>
     <string name="_127_0_0_1">127.0.0.1</string>
     <string name="capture">capture</string>
+    <string name="send">Send</string>
 </resources>
